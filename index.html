@@ -785,40 +785,33 @@ section { padding: 6rem 2rem; }
   a, button { cursor: pointer; }
 
   /* Navbar */
-  .navbar { padding: 1.1rem 1.5rem; }
+  .navbar { padding: 1.1rem 1.5rem; position: relative; }
   .hamburger { display: flex; }
 
   .nav-links {
-    position: fixed;
-    top: 0; right: -100%;
-    width: 70%;
-    height: 100vh;
-    background: rgba(255,249,247,0.97);
-    backdrop-filter: blur(20px);
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0; right: 0;
+    background: white;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    gap: 2.5rem;
-    font-size: 16px;
-    letter-spacing: 0.12em;
-    transition: right 0.5s cubic-bezier(0.23,1,0.32,1);
-    border-left: 1px solid var(--border);
-    z-index: 150;
+    gap: 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 8px 24px rgba(74,63,53,0.1);
+    z-index: 999;
   }
-  .nav-links.open { right: 0; }
-  .nav-links a { font-size: 15px; }
-
-  /* Overlay when menu open */
-  .nav-overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(74,63,53,0.3);
-    z-index: 140;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.4s ease;
+  .nav-links.open { display: flex; }
+  .nav-links a {
+    font-size: 15px;
+    width: 100%;
+    text-align: center;
+    padding: 1.1rem 2rem;
+    border-bottom: 1px solid var(--border);
+    letter-spacing: 0.1em;
   }
-  .nav-overlay.open { opacity: 1; pointer-events: all; }
+  .nav-links a:last-child { border-bottom: none; }
 
   /* Layout fixes */
   .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
@@ -850,13 +843,12 @@ section { padding: 6rem 2rem; }
       <span></span><span></span><span></span>
     </button>
     <div class="nav-links" id="nav-links">
-      <a href="#projects" onclick="mobileNav(event,'projects')">Projects</a>
-      <a href="#about" onclick="mobileNav(event,'about')">About</a>
-      <a href="#contact" onclick="mobileNav(event,'contact')">Contact</a>
+      <a href="#projects" onclick="closeMenu()">Projects</a>
+      <a href="#about" onclick="closeMenu()">About</a>
+      <a href="#contact" onclick="closeMenu()">Contact</a>
     </div>
   </div>
 </nav>
-<div class="nav-overlay" id="nav-overlay" onclick="closeMenu()"></div>
 
 <!-- HERO -->
 <section class="hero">
@@ -1106,32 +1098,25 @@ section { padding: 6rem 2rem; }
 </footer>
 
 <script>
-// Hamburger menu
-function mobileNav(e, id) {
-  e.preventDefault();
-  closeMenu();
-  setTimeout(() => {
-    const el = document.getElementById(id);
-    if (!el) return;
-    const navHeight = document.querySelector('.navbar').offsetHeight;
-    const top = el.getBoundingClientRect().top + window.pageYOffset - navHeight - 10;
-    window.scrollTo({ top: top, behavior: 'smooth' });
-  }, 350);
-}
+// Hamburger
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('nav-links');
-const navOverlay = document.getElementById('nav-overlay');
 
 function closeMenu() {
   hamburger.classList.remove('open');
   navLinks.classList.remove('open');
-  navOverlay.classList.remove('open');
 }
 
 hamburger.addEventListener('click', () => {
   hamburger.classList.toggle('open');
   navLinks.classList.toggle('open');
-  navOverlay.classList.toggle('open');
+});
+
+// Close menu when a nav link is tapped (mobile)
+navLinks.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    closeMenu();
+  });
 });
 
 // Cursor — only on non-touch devices
@@ -1140,39 +1125,31 @@ const cursor = document.getElementById('cursor');
 const ring = document.getElementById('cursor-ring');
 
 if (!isTouchDevice) {
-let mx = 0, my = 0, rx = 0, ry = 0;
-
-document.addEventListener('mousemove', e => {
-  mx = e.clientX; my = e.clientY;
-  cursor.style.left = mx + 'px';
-  cursor.style.top = my + 'px';
-});
-
-function animateRing() {
-  rx += (mx - rx) * 0.12;
-  ry += (my - ry) * 0.12;
-  ring.style.left = rx + 'px';
-  ring.style.top = ry + 'px';
-  requestAnimationFrame(animateRing);
+  let mx = 0, my = 0, rx = 0, ry = 0;
+  document.addEventListener('mousemove', e => {
+    mx = e.clientX; my = e.clientY;
+    cursor.style.left = mx + 'px';
+    cursor.style.top = my + 'px';
+  });
+  function animateRing() {
+    rx += (mx - rx) * 0.12;
+    ry += (my - ry) * 0.12;
+    ring.style.left = rx + 'px';
+    ring.style.top = ry + 'px';
+    requestAnimationFrame(animateRing);
+  }
+  animateRing();
+  document.querySelectorAll('a, button, .project-card, .skill-category').forEach(el => {
+    el.addEventListener('mouseenter', () => {
+      cursor.style.transform = 'translate(-50%,-50%) scale(2)';
+      ring.style.width = '60px'; ring.style.height = '60px'; ring.style.opacity = '0.3';
+    });
+    el.addEventListener('mouseleave', () => {
+      cursor.style.transform = 'translate(-50%,-50%) scale(1)';
+      ring.style.width = '36px'; ring.style.height = '36px'; ring.style.opacity = '0.5';
+    });
+  });
 }
-animateRing();
-
-// Cursor hover effects
-document.querySelectorAll('a, button, .project-card, .skill-category').forEach(el => {
-  el.addEventListener('mouseenter', () => {
-    cursor.style.transform = 'translate(-50%,-50%) scale(2)';
-    ring.style.width = '60px';
-    ring.style.height = '60px';
-    ring.style.opacity = '0.3';
-  });
-  el.addEventListener('mouseleave', () => {
-    cursor.style.transform = 'translate(-50%,-50%) scale(1)';
-    ring.style.width = '36px';
-    ring.style.height = '36px';
-    ring.style.opacity = '0.5';
-  });
-});
-} // end non-touch cursor
 
 // Scroll progress
 const progressBar = document.getElementById('scroll-progress');
@@ -1183,13 +1160,8 @@ window.addEventListener('scroll', () => {
 
 // Scroll-triggered fade
 const observer = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.classList.add('visible');
-    }
-  });
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
 }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-
 document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 </script>
 </body>
