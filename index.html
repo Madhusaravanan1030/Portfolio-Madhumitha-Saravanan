@@ -850,9 +850,9 @@ section { padding: 6rem 2rem; }
       <span></span><span></span><span></span>
     </button>
     <div class="nav-links" id="nav-links">
-      <a href="#projects" onclick="closeMenu()">Projects</a>
-      <a href="#about" onclick="closeMenu()">About</a>
-      <a href="#contact" onclick="closeMenu()">Contact</a>
+      <a href="#projects" onclick="mobileNav(event,'projects')">Projects</a>
+      <a href="#about" onclick="mobileNav(event,'about')">About</a>
+      <a href="#contact" onclick="mobileNav(event,'contact')">Contact</a>
     </div>
   </div>
 </nav>
@@ -1107,6 +1107,17 @@ section { padding: 6rem 2rem; }
 
 <script>
 // Hamburger menu
+function mobileNav(e, id) {
+  e.preventDefault();
+  closeMenu();
+  setTimeout(() => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    const navHeight = document.querySelector('.navbar').offsetHeight;
+    const top = el.getBoundingClientRect().top + window.pageYOffset - navHeight - 10;
+    window.scrollTo({ top: top, behavior: 'smooth' });
+  }, 350);
+}
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('nav-links');
 const navOverlay = document.getElementById('nav-overlay');
