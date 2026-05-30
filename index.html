@@ -845,9 +845,9 @@ section { padding: 6rem 2rem; }
       <span></span><span></span><span></span>
     </button>
     <div class="nav-links" id="nav-links">
-      <a onclick="closeMenu();document.querySelector('.projects-section').scrollIntoView({behavior:'smooth'})" href="#">Projects</a>
-      <a onclick="closeMenu();document.querySelector('.about-section').scrollIntoView({behavior:'smooth'})" href="#">About</a>
-      <a onclick="closeMenu();document.querySelector('.contact-section').scrollIntoView({behavior:'smooth'})" href="#">Contact</a>
+      <a onclick="closeMenu();scrollTo('projects')" href="#">Projects</a>
+      <a onclick="closeMenu();scrollTo('about')" href="#">About</a>
+      <a onclick="closeMenu();scrollTo('contact')" href="#">Contact</a>
     </div>
   </div>
 </nav>
@@ -868,13 +868,13 @@ section { padding: 6rem 2rem; }
     <p>Pre-Final Year CS Student at Dr. N.G.P. Institute of Technology · CGPA 7.96 · Passionate about Machine Learning, AI, and building intelligent applications that matter.</p>
     <div class="hero-buttons">
       <a href="https://drive.google.com/file/d/1ZGdnpBjIMBLu9kIdSFA7yFT_HgnyzEha/view?usp=sharing" class="btn btn-primary" target="_blank">Download Resume</a>
-      <button class="btn btn-secondary" onclick="document.querySelector('.projects-section').scrollIntoView({behavior:'smooth'})">View Projects</button>
+      <button class="btn btn-secondary" onclick="scrollTo('projects')">View Projects</button>
     </div>
   </div>
 </section>
 
 <!-- PROJECTS -->
-<section class="projects-section">
+<section class="projects-section" id="projects">
   <div class="section-container">
     <div class="fade-in">
       <span class="section-label">Selected Work</span>
@@ -974,7 +974,7 @@ section { padding: 6rem 2rem; }
 </section>
 
 <!-- ABOUT -->
-<section class="about-section">
+<section class="about-section" id="about">
   <div class="section-container">
     <div class="about-grid">
       <div class="about-sidebar fade-in">
@@ -1080,7 +1080,7 @@ section { padding: 6rem 2rem; }
 </section>
 
 <!-- CONTACT -->
-<section class="contact-section">
+<section class="contact-section" id="contact">
   <div class="contact-inner fade-in">
     <span class="section-label">Get In Touch</span>
     <h2>Let's <em>Talk</em></h2>
@@ -1101,6 +1101,15 @@ section { padding: 6rem 2rem; }
 </footer>
 
 <script>
+// Scroll helper — accounts for sticky navbar height
+function scrollTo(id) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  const navHeight = document.querySelector('.navbar').offsetHeight;
+  const top = el.getBoundingClientRect().top + window.pageYOffset - navHeight;
+  window.scrollTo({ top, behavior: 'smooth' });
+}
+
 // Hamburger menu
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('nav-links');
