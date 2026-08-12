@@ -184,11 +184,13 @@ const projectsData = [
     links: [
       { text: 'GitHub', url: 'https://github.com/Madhusaravanan1030/diffsense', type: 'secondary' }
     ],
-    placeholder: {
-      gradient: 'linear-gradient(135deg,#1f2937,#111827)',
-      icon: '🤖',
-      label: 'DiffSense'
-    },
+    screenshots: [
+      '/diffsense_screenshot/ss_1.png',
+      '/diffsense_screenshot/ss_2.png',
+      '/diffsense_screenshot/ss_3.png',
+      '/diffsense_screenshot/ss_4.png',
+      '/diffsense_screenshot/ss_5.png'
+    ],
     delay: 'fade-in-delay-2'
   }
 ];
