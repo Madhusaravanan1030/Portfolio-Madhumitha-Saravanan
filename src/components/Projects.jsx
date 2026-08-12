@@ -92,78 +92,11 @@ function ProjectSlider({ screenshots, placeholder, title }) {
 
 const projectsData = [
   {
-    id: 'cineiq',
-    tag: 'ML & Full-Stack',
-    title: 'CineIQ — AI Movie Recommender',
-    desc: 'AI-powered movie recommendation platform using TF-IDF and Cosine Similarity. Features user authentication, watchlist management, trending movies, and intelligent content-based recommendations via TMDB API.',
-    techs: ['React.js', 'Node.js', 'FastAPI', 'MongoDB', 'TMDB API'],
-    links: [
-      { text: 'Live Demo', url: 'https://cine-iq-omega.vercel.app/', type: 'primary' },
-      { text: 'GitHub', url: 'https://github.com/Madhusaravanan1030/cineIQ', type: 'secondary' }
-    ],
-    screenshots: [
-      '/cineIQ_screenshot/cineiq_1.png',
-      '/cineIQ_screenshot/cineiq_2.png',
-      '/cineIQ_screenshot/cineiq_3.png'
-    ],
-    delay: 'fade-in-delay-1'
-  },
-  {
-    id: 'linksnap',
-    tag: 'Full-Stack',
-    title: 'LinkSnap — URL Shortener',
-    desc: 'Full-stack URL shortener with click analytics, QR code generation, link management dashboard, expiry control, and JWT-based user authentication.',
-    techs: ['React.js', 'Node.js', 'Express', 'MongoDB', 'TailwindCSS'],
-    links: [
-      { text: 'GitHub', url: 'https://github.com/Madhusaravanan1030/linksnap', type: 'secondary' }
-    ],
-    screenshots: [
-      '/linksnap_screenshot/link_1.png',
-      '/linksnap_screenshot/link_2.png',
-      '/linksnap_screenshot/link_3.png',
-      '/linksnap_screenshot/link_4.png'
-    ],
-    delay: 'fade-in-delay-2'
-  },
-  {
-    id: 'papertopodcast',
-    tag: 'GenAI & Audio',
-    title: 'Paper to Podcast',
-    desc: 'AI-powered app that transforms research paper PDFs into engaging podcast episodes using Llama 3.3 70B and dual-voice TTS. Automates PDF extraction, script generation, and audio production.',
-    techs: ['Llama 3.3', 'FastAPI', 'Python', 'TTS', 'PyPDF'],
-    links: [
-      { text: 'GitHub', url: 'https://github.com/Madhusaravanan1030/Paper-to-Podcast', type: 'secondary' }
-    ],
-    screenshots: [
-      '/papertopodcast_screenshot/ptp_1.png',
-      '/papertopodcast_screenshot/ptp_2.png',
-      '/papertopodcast_screenshot/ptp_3.png'
-    ],
-    delay: 'fade-in-delay-3'
-  },
-  {
-    id: 'agrosmart',
-    tag: 'IoT & AI',
-    title: 'AgroSmart — Smart Irrigation using IoT & AI',
-    desc: 'IoT-enabled smart irrigation system with Arduino Uno, DHT11, and soil moisture sensors for real-time environmental monitoring and automated irrigation control via mobile app.',
-    techs: ['Arduino', 'ESP8266', 'Python', 'Flutter'],
-    links: [],
-    screenshots: [
-      '/agrosmart_screenshot/agro_1.png',
-      '/agrosmart_screenshot/agro_2.png',
-      '/agrosmart_screenshot/agro_3.png',
-      '/agrosmart_screenshot/agro_4.png',
-      '/agrosmart_screenshot/agro_5.png',
-      '/agrosmart_screenshot/agro_6.png'
-    ],
-    delay: 'fade-in-delay-4'
-  },
-  {
     id: 'oncophase',
     tag: 'AI & Healthcare',
     title: 'OncoPhase — Breast Cancer Progression Predictor',
-    desc: 'Advanced AI model using XGBoost Cox survival models with transformer networks. SHAP-based explainability provides transparent and interpretable clinical risk insights.',
-    techs: ['XGBoost', 'Transformers', 'SHAP', 'Python'],
+    desc: 'Built a survival-analysis pipeline using XGBoost Cox models and transformer-based architectures to predict breast cancer progression from longitudinal clinical data, handling censored patient outcomes. Integrated SHAP explainability.',
+    techs: ['Python', 'XGBoost', 'Transformers', 'SHAP', 'Pandas', 'Scikit-learn'],
     links: [],
     screenshots: [
       '/oncophase_screenshot/screenshot_1.png',
@@ -179,16 +112,82 @@ const projectsData = [
     delay: 'fade-in-delay-1'
   },
   {
+    id: 'cineiq',
+    tag: 'ML & Full-Stack',
+    title: 'CineIQ — AI-Powered Movie Recommendation Platform',
+    desc: 'Designed and built a content-based movie recommendation engine using TF-IDF vectorization and cosine similarity. Integrated user authentication, watchlist management, and a trending-movies feed on React/Node/FastAPI with MongoDB.',
+    techs: ['React.js', 'Node.js', 'Express.js', 'FastAPI', 'MongoDB', 'Python', 'TMDB API', 'TF-IDF', 'Cosine Similarity', 'Figma'],
+    links: [
+      { text: 'Live Demo', url: 'https://cine-iq-omega.vercel.app/', type: 'primary' },
+      { text: 'GitHub', url: 'https://github.com/Madhusaravanan1030/cineIQ', type: 'secondary' }
+    ],
+    screenshots: [
+      '/cineIQ_screenshot/cineiq_1.png',
+      '/cineIQ_screenshot/cineiq_2.png',
+      '/cineIQ_screenshot/cineiq_3.png'
+    ],
+    delay: 'fade-in-delay-2'
+  },
+  {
     id: 'secondsight',
     tag: 'Computer Vision',
-    title: 'Second Sight — Visual Guide for Blind',
-    desc: 'Smartphone-based AI app with real-time obstacle detection and OCR. Offline-capable Android application enhancing accessibility and independence for visually impaired users.',
-    techs: ['Android', 'OpenCV', 'Deep Learning', 'Python'],
+    title: 'Second Sight — AI Visual Guide for the Blind',
+    desc: 'Built a smartphone-based AI visual assistant using computer vision and deep learning for real-time obstacle detection, OCR, and audio-guided navigation. Works fully offline on Android with no additional hardware.',
+    techs: ['Computer Vision', 'Deep Learning', 'OCR', 'Android'],
     links: [],
     placeholder: {
       gradient: 'linear-gradient(135deg,#1a2a2e,#1a1e3a)',
       icon: '👁️',
       label: 'Second Sight'
+    },
+    delay: 'fade-in-delay-3'
+  },
+  {
+    id: 'papertopodcast',
+    tag: 'GenAI & Audio',
+    title: 'Paper-to-Podcast — AI Research Summarization Tool',
+    desc: 'Built an end-to-end pipeline that converts research paper PDFs into narrated podcast episodes using Llama 3.3 70B (via Groq) for script generation and dual-voice text-to-speech synthesis.',
+    techs: ['Python', 'Groq (Llama 3.3 70B)', 'Gradio', 'Edge TTS', 'pdfplumber', 'pydub', 'FFmpeg'],
+    links: [
+      { text: 'GitHub', url: 'https://github.com/Madhusaravanan1030/Paper-to-Podcast', type: 'secondary' }
+    ],
+    screenshots: [
+      '/papertopodcast_screenshot/ptp_1.png',
+      '/papertopodcast_screenshot/ptp_2.png',
+      '/papertopodcast_screenshot/ptp_3.png'
+    ],
+    delay: 'fade-in-delay-4'
+  },
+  {
+    id: 'linksnap',
+    tag: 'Full-Stack',
+    title: 'LinkSnap — Full-Stack URL Shortener & Analytics Platform',
+    desc: 'Built a full-stack URL shortening platform with custom short links, QR code generation, link expiration, and JWT-based authentication. Implemented real-time click analytics dashboards using Recharts.',
+    techs: ['React.js', 'Vite', 'Tailwind CSS', 'Node.js', 'Express.js', 'MongoDB', 'JWT', 'bcrypt', 'nanoid', 'Vercel', 'Render'],
+    links: [
+      { text: 'GitHub', url: 'https://github.com/Madhusaravanan1030/linksnap', type: 'secondary' }
+    ],
+    screenshots: [
+      '/linksnap_screenshot/link_1.png',
+      '/linksnap_screenshot/link_2.png',
+      '/linksnap_screenshot/link_3.png',
+      '/linksnap_screenshot/link_4.png'
+    ],
+    delay: 'fade-in-delay-1'
+  },
+  {
+    id: 'diffsense',
+    tag: 'AI & DevOps',
+    title: 'DiffSense – AI-Powered CI/CD Toolkit',
+    desc: 'Built two GitHub Actions bots: an LLM-based PR code reviewer (GPT-4, structured JSON output, inline comments) and a static analysis test selector using an AST-based import graph to run only impacted tests.',
+    techs: ['Python', 'OpenAI API (GPT-4)', 'GitHub Actions', 'GitHub REST API', 'AST', 'pytest', 'unified diff parsing'],
+    links: [
+      { text: 'GitHub', url: 'https://github.com/Madhusaravanan1030/diffsense', type: 'secondary' }
+    ],
+    placeholder: {
+      gradient: 'linear-gradient(135deg,#1f2937,#111827)',
+      icon: '🤖',
+      label: 'DiffSense'
     },
     delay: 'fade-in-delay-2'
   }

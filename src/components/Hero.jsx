@@ -154,7 +154,7 @@ export default function Hero() {
             <div className="orbit"><div className="orbit-dot"></div></div>
             <div className="orbit-2"></div>
             <div className="hero-avatar">
-              <img src="https://res.cloudinary.com/dtz2qhsjh/image/upload/f_auto,q_auto/WhatsApp_Image_2026-05-26_at_4.24.11_PM_xpl0ik" alt="Madhumitha Saravanan" />
+              <img src="/avatar.jpg" alt="Madhumitha Saravanan" />
             </div>
           </div>
           <h1><span className="glitch" data-text="Madhumitha">Madhumitha</span> <em>Saravanan</em></h1>
@@ -162,10 +162,10 @@ export default function Hero() {
             I build <span className="typed" id="typed-text">{activeWord}</span><span className="typed-cursor"></span>
           </div>
           <div className="hero-divider"></div>
-          <p>Pre-Final Year CS Student at Dr. N.G.P. Institute of Technology · CGPA 7.96 · Passionate about building intelligent systems that solve real problems — from IoT to transformers.</p>
+          <p>Final Year AI and DS Student at Dr. N.G.P. Institute of Technology · CGPA 8.3 · Passionate about building intelligent systems that solve real problems from IoT to transformers.</p>
           <div className="hero-buttons">
             <a 
-              href="https://drive.google.com/file/d/1ZGdnpBjIMBLu9kIdSFA7yFT_HgnyzEha/view?usp=sharing" 
+              href="https://drive.google.com/file/d/1GNsfeQ8kB0oXEszQUGYW3pqPaJVD3gBp/view?usp=sharing" 
               className="btn btn-primary" 
               target="_blank" 
               rel="noopener noreferrer"
@@ -192,13 +192,13 @@ export default function Hero() {
           <div className="exp-track" id="exp-track">
             {[
               "MERN Stack Developer", "Data Analyst", "AI Engineer", 
-              "Dr. N.G.P. Institute of Technology", "Internship · Digitoad Technologies", "CGPA 7.96"
+              "Dr. N.G.P. Institute of Technology", "Internship · Digitoad Technologies", "CGPA 8.3"
             ].map((item, i) => (
               <div key={`item-${i}`} className="exp-item"><div className="exp-dot"></div>{item}</div>
             ))}
             {[
               "MERN Stack Developer", "Data Analyst", "AI Engineer", 
-              "Dr. N.G.P. Institute of Technology", "Internship · Digitoad Technologies", "CGPA 7.96"
+              "Dr. N.G.P. Institute of Technology", "Internship · Digitoad Technologies", "CGPA 8.3"
             ].map((item, i) => (
               <div key={`dup-${i}`} className="exp-item"><div className="exp-dot"></div>{item}</div>
             ))}

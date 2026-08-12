@@ -92,9 +92,9 @@ export default function About() {
             <span className="section-label">The Story</span>
             <h2 className="section-title">About <em>Me</em></h2>
             <div className="about-text">
-              <p>Hi there! I'm Madhumitha Saravanan, a passionate Computer Science student specialising in AI &amp; Data Science at Dr. N.G.P. Institute of Technology. I believe technology should solve real problems — and that's exactly what drives me every day.</p>
-              <p>My journey spans building intelligent ML systems, crafting full-stack web applications with the MERN stack, and turning raw data into meaningful insights. I'm equally at home training a neural network as I am designing a clean, responsive UI.</p>
-              <p>Whether it's developing OncoPhase (an AI cancer progression predictor), building a visual guide for the blind, or crafting data pipelines — I bring curiosity, grit, and a love for learning to everything I do.</p>
+              <p>Hi there! I'm Madhumitha Saravanan, a passionate Computer Science student specialising in AI &amp; Data Science at Dr. N.G.P. Institute of Technology. I believe technology should solve real problems and that's exactly what drives me every day.</p>
+              <p>I started with the fundamentals of machine learning and deep learning, then moved into NLP and computer vision to understand how machines interpret language and images. That foundation pulled me toward Generative AI, where I now explore RAG and agentic workflows to build AI systems that are genuinely useful, not just impressive demos.</p>
+              <p>Whether it's developing OncoPhase (an AI cancer progression predictor), building a visual guide for the blind, or crafting data pipelines , I bring curiosity, grit, and a love for learning to everything I do.</p>
             </div>
           </div>
         </div>
@@ -107,15 +107,15 @@ export default function About() {
             <div className="highlight-list">
               <div className="highlight-item">
                 <span className="highlight-num">01</span>
-                <span className="highlight-text">Participated in multiple hackathons and ideathons, competing and collaborating with driven peers</span>
+                <span className="highlight-text">Presented a research paper, "AI in Human Resources," at an International Conference</span>
               </div>
               <div className="highlight-item">
                 <span className="highlight-num">02</span>
-                <span className="highlight-text">Completed internship at Digitoad Technologies, gaining real-world development experience</span>
+                <span className="highlight-text">Developed a UPI Payment Solution for underage teens in a hackathon at MIT College</span>
               </div>
               <div className="highlight-item">
                 <span className="highlight-num">03</span>
-                <span className="highlight-text">Showcased projects at technical symposiums, presenting to industry professionals</span>
+                <span className="highlight-text">Built the AI Breast Cancer Progression Predictor in a 24-hour hackathon hosted by Dr. N.G.P. Institute of Technology</span>
               </div>
             </div>
           </div>
@@ -125,11 +125,11 @@ export default function About() {
             <span className="section-label">By the Numbers</span>
             <div className="about-stats" style={{ marginTop: '1rem' }}>
               <div className="stat">
-                <StatCount target={7.96} />
+                <StatCount target={8.03} />
                 <div className="stat-label">CGPA</div>
               </div>
               <div className="stat">
-                <StatCount target={4} />
+                <StatCount target={6} />
                 <div className="stat-label">Projects</div>
               </div>
               <div className="stat">
