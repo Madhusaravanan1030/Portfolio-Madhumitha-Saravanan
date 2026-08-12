@@ -162,10 +162,10 @@ export default function Hero() {
             I build <span className="typed" id="typed-text">{activeWord}</span><span className="typed-cursor"></span>
           </div>
           <div className="hero-divider"></div>
-          <p>Final Year AI and DS Student at Dr. N.G.P. Institute of Technology · CGPA 8.3 · Passionate about building intelligent systems that solve real problems from IoT to transformers.</p>
+          <p>Final Year AI and DS Student at Dr. N.G.P. Institute of Technology · CGPA 8.03 · Passionate about building intelligent systems that solve real problems from IoT to transformers.</p>
           <div className="hero-buttons">
             <a 
-              href="https://drive.google.com/file/d/1GNsfeQ8kB0oXEszQUGYW3pqPaJVD3gBp/view?usp=sharing" 
+              href="https://drive.google.com/file/d/1CzCvSpz4-aAie2knRm0xOSGHITz1KVYc/view?usp=sharing" 
               className="btn btn-primary" 
               target="_blank" 
               rel="noopener noreferrer"
