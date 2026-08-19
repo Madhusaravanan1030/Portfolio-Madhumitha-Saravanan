@@ -154,7 +154,7 @@ export default function Hero() {
             <div className="orbit"><div className="orbit-dot"></div></div>
             <div className="orbit-2"></div>
             <div className="hero-avatar">
-              <img src="/avatar.jpg" alt="Madhumitha Saravanan" />
+              <img src="/ofc_pfp.png" alt="Madhumitha Saravanan" />
             </div>
           </div>
           <h1><span className="glitch" data-text="Madhumitha">Madhumitha</span> <em>Saravanan</em></h1>
