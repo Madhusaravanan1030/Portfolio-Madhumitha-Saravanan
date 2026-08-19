@@ -187,7 +187,7 @@ const projectsData = [
     desc: 'Built two GitHub Actions bots: an LLM-based PR code reviewer (GPT-4, structured JSON output, inline comments) and a static analysis test selector using an AST-based import graph to run only impacted tests.',
     techs: ['Python', 'OpenAI API (GPT-4)', 'GitHub Actions', 'GitHub REST API', 'AST', 'pytest', 'unified diff parsing'],
     links: [
-      { text: 'GitHub', url: 'https://github.com/Madhusaravanan1030/diffsense', type: 'primary' }
+      { text: 'GitHub', url: 'https://github.com/Madhusaravanan1030/AI_CI-CD_Toolkit', type: 'primary' }
     ],
     screenshots: [
       '/diffsense_screenshot/ss_1.png',
