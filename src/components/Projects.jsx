@@ -97,7 +97,10 @@ const projectsData = [
     title: 'OncoPhase — Breast Cancer Progression Predictor',
     desc: 'Built a survival-analysis pipeline using XGBoost Cox models and transformer-based architectures to predict breast cancer progression from longitudinal clinical data, handling censored patient outcomes. Integrated SHAP explainability.',
     techs: ['Python', 'XGBoost', 'Transformers', 'SHAP', 'Pandas', 'Scikit-learn'],
-    links: [],
+    links: [
+      { text: 'Live Demo',url: 'https://oncophase.onrender.com/', type: 'primary' },
+      { text: 'GitHub' ,url: 'https://github.com/Madhusaravanan1030/OncoPhase', type: 'secondary' }
+    ],
     screenshots: [
       '/oncophase_screenshot/screenshot_1.png',
       '/oncophase_screenshot/screenshot_2.png',
@@ -149,6 +152,7 @@ const projectsData = [
     desc: 'Built an end-to-end pipeline that converts research paper PDFs into narrated podcast episodes using Llama 3.3 70B (via Groq) for script generation and dual-voice text-to-speech synthesis.',
     techs: ['Python', 'Groq (Llama 3.3 70B)', 'Gradio', 'Edge TTS', 'pdfplumber', 'pydub', 'FFmpeg'],
     links: [
+      { text: 'Live Demo', url: 'https://paper-to-podcast.onrender.com', type: 'primary' }
       { text: 'GitHub', url: 'https://github.com/Madhusaravanan1030/Paper-to-Podcast', type: 'secondary' }
     ],
     screenshots: [
@@ -165,6 +169,7 @@ const projectsData = [
     desc: 'Built a full-stack URL shortening platform with custom short links, QR code generation, link expiration, and JWT-based authentication. Implemented real-time click analytics dashboards using Recharts.',
     techs: ['React.js', 'Vite', 'Tailwind CSS', 'Node.js', 'Express.js', 'MongoDB', 'JWT', 'bcrypt', 'nanoid', 'Vercel', 'Render'],
     links: [
+      { text: 'Live Demo', url: 'https://link-snap-liart.vercel.app/', type: 'primary' }
       { text: 'GitHub', url: 'https://github.com/Madhusaravanan1030/linksnap', type: 'secondary' }
     ],
     screenshots: [
@@ -182,7 +187,7 @@ const projectsData = [
     desc: 'Built two GitHub Actions bots: an LLM-based PR code reviewer (GPT-4, structured JSON output, inline comments) and a static analysis test selector using an AST-based import graph to run only impacted tests.',
     techs: ['Python', 'OpenAI API (GPT-4)', 'GitHub Actions', 'GitHub REST API', 'AST', 'pytest', 'unified diff parsing'],
     links: [
-      { text: 'GitHub', url: 'https://github.com/Madhusaravanan1030/diffsense', type: 'secondary' }
+      { text: 'GitHub', url: 'https://github.com/Madhusaravanan1030/diffsense', type: 'primary' }
     ],
     screenshots: [
       '/diffsense_screenshot/ss_1.png',
